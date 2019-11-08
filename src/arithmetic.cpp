@@ -1,6 +1,6 @@
 #include "arithmetic.h"
 
-Arithmetic::Arithmetic(/* args */)
+Arithmetic::Arithmetic()
 {
 }
 
