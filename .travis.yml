@@ -1,5 +1,6 @@
 dist: "bionic"
 language: cpp
+python: 2.7
 
 addons:
   apt:
@@ -12,6 +13,9 @@ addons:
 before_install:
   - sudo apt update
   - sudo apt install -y libgtest-dev cmake build-essential
+  - python --version
+  - pip install -U pip
+  - pip install -U pytest
 
 install:
   - cd /usr/src/gtest
@@ -27,3 +31,5 @@ script:
   - cmake .. -DCMAKE_BUILD_TYPE=Release
   - make
   - ./arithmetic_test
+  - cd ..
+  - pytest
